@@ -1,0 +1,11 @@
+{
+  "name": "RaterLog",
+  "description": "Simple utility to accuratly keep track of your hours as a Rater or Freelancer.",
+  "version": "1.0",
+  "manifest_version": 3,
+  "permissions": ["storage"],
+  "action": {
+    "default_popup": "RaterLog.html",
+    "default_icon": "hello_extensions.png"
+  }
+}
