@@ -1,25 +1,25 @@
+<!-- popup.html (minimal example) -->
+<!DOCTYPE html>
 <html>
-  <body>
-    <h1>Welcome to RaterLog!</h1>
+<head>
+  <meta charset="utf-8">
+  <style>
+    body { font-family: sans-serif; padding: 15px; width: 300px; }
+    input, textarea { width: 100%; margin: 8px 0; padding: 8px; }
+    button { padding: 10px; width: 100%; margin-top: 10px; }
+    #output { white-space: pre-wrap; margin-top: 20px; font-size: 12px; }
+  </style>
+</head>
+<body>
+  <h2>RatingLog V1.0</h2>
+  <input type="time" id="StartTime">
+  <input type="time" id="EndTime">
+  <input type="date" id="Date">
+  <textarea id="TasksCompleted" placeholder="What did you do?"></textarea>
+  <button id="save-btn">Save Task</button>
+  <button id="view-logs">View All Logs</button>
+  
 
-    <label for="StartTime">Start Time:</label>
-    <input type="text" id="StartTime" name="startTime" required size="10" />
-
-    <label for="EndTime">End Time:</label>
-    <input type="text" id="EndTime" name="endTime" required size="10" />
-
-    <label for="Date">Date:</label>
-    <input type="date" id="Date" name="date" required size="10" />
-
-    <label for="TasksCompleted">Tasks Completed:</label>
-    <input type="number" id="TasksCompleted" name="tasksCompleted" required size="10" />
-
-    <button id="saveBtn" type="button">Save Entry</button>
-    <button id="view-logs">View Logs</button>
-
-    <h3> Saved array</h3>
-    <pre id="output">Loading...</pre>
-
-    <script src="popup.js"></script>
-  </body>
+  <script src="popup.js"></script>
+</body>
 </html>

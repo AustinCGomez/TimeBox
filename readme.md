@@ -1,6 +1,11 @@
-# RaterLog
+# RatingLog
 
-RaterLog is a free chrome extension that helps raters (TELUS, Welocalize, Reforma, etc, etc) accurately keep track of their work hours when rating tasks. The extension can also be used by freelancers who are logging hours for their work tasks for clients. 
+RatingLog is a upcoming open source chromium extension that helps raters (TELUS, WeLocalize, Reforma, etc) with tracking their work hours prior to imputing them into Workday or other platforms. The tool can also be used by freelancers who want to store their start and stop times. 
 
-The project is currently under active development and further information will be available as soon as a alpha version is deployed to the Chrome market.
-a
+The project is currently under active development towards our alpha launch. Further information will be available prior to the launch of the alpha version of our product on the Chrome store. In addition, this project will begin accepting open source contributions when the alpha version is released. 
+
+
+
+# Installing Environment
+
+Coming Soon
