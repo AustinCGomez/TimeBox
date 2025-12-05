@@ -8,17 +8,33 @@
     input, textarea { width: 100%; margin: 8px 0; padding: 8px; }
     button { padding: 10px; width: 100%; margin-top: 10px; }
     #output { white-space: pre-wrap; margin-top: 20px; font-size: 12px; }
+    .hidden {
+      display: none;
+    }
   </style>
+
 </head>
 <body>
-  <h2>RatingLog V1.0</h2>
+  <!-- Main View-->
+  <div id ="mainView">
+  <h1> RateingLog Main Panel </h1>
   <input type="time" id="StartTime">
   <input type="time" id="EndTime">
   <input type="date" id="Date">
   <textarea id="TasksCompleted" placeholder="What did you do?"></textarea>
   <button id="save-btn">Save Task</button>
   <button id="view-logs">View All Logs</button>
+  </div>
+
+  <div id ="logs-dashboard" class="hidden">
+    <button id="back-button"> Back </button>
+    <h2> All Logs </h2>
+    <div id="output">Loading...</div>
+  </div>
   
+  <footer> 
+    <a href = "https://github.com/AustinCGomez/RatingLog"> Contribute to the project on Github. </a>
+  </footer>
 
   <script src="popup.js"></script>
 </body>

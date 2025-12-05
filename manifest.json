@@ -6,6 +6,6 @@
   "permissions": ["storage"],
   "action": {
     "default_popup": "RaterLog.html",
-    "default_icon": "hello_extensions.png"
+    "default_icon": "RaterLog.png"
   }
 }
