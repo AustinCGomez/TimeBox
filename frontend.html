@@ -3,45 +3,61 @@
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" href="styles.css">
-
 </head>
+
 <body>
-  <!-- Main View-->
-  <div id="mainView">
-    <h1> RaterLog Dashboard </h1>
-    <p> Please type in the following fields to log in your data: </p>
-    <label for="StartTime">Start Time: </label>
-    <input type="time" id="StartTime">
-    <label for="EndTime"> End Time: </label>
-    <input type="time" id="EndTime">
-    <label for="date"> Enter the Date: </label>
-    <input type="date" id="Date">
-    <label for="TasksCompleted"> Total Tasks Completed: </label>
-    <textarea id="TasksCompleted" placeholder="What did you do?"></textarea>
-    <button id="save-btn">Save Task</button>
-    <button id="view-logs">View Hours Worked</button>
-  </div>
+  <div class="app-container">
 
-  <!-- Logs View-->
-  <div id="logs-dashboard" class="hidden">
-    <button class="back-button"> Back </button>
-    <h2> All Logs </h2>
-    <div id="output">Loading...</div>
-    <button id="delete-logs"> Delete logs</button>
-  </div>
+    <div id="mainView" class="card">
+      <h1>RaterLog</h1>
+      <p class="subtitle">Log your working hours</p>
 
-  <!-- Warning View-->
-  <div id="warning-dashboard" class="hidden">
-    <button class="back-button"> Return to main screen. </button>
-    <p> Are you absolutely sure that you want to delete your logs? This is irreversible</p>
-    <button id="no">  No </button>
-    <button id="yes"> Yes</button>
-  </div>
+      <div class="field">
+        <label for="StartTime">Start Time</label>
+        <input type="time" id="StartTime">
+      </div>
 
-  <!-- Footer-->
-  <footer> 
-    <p> Developed free for everyone under the MIT License! </p>
-  </footer>
+      <div class="field">
+        <label for="EndTime">End Time</label>
+        <input type="time" id="EndTime">
+      </div>
+
+      <div class="field">
+        <label for="Date">Date</label>
+        <input type="date" id="Date">
+      </div>
+
+      <div class="field">
+        <label for="TasksCompleted">Tasks Completed</label>
+        <textarea id="TasksCompleted" placeholder="Briefly describe your tasks..."></textarea>
+      </div>
+
+      <button id="save-btn" class="primary-btn">Save Task</button>
+      <button id="view-logs" class="secondary-btn">View Logs</button>
+    </div>
+
+    <div id="logs-dashboard" class="card hidden">
+      <button class="back-button link-btn">← Back</button>
+      <h2>All Logs</h2>
+      <div id="output" class="logs-box">No logs found...</div>
+      <button id="delete-logs" class="danger-btn">Delete All Logs</button>
+    </div>
+
+    <div id="warning-dashboard" class="card hidden">
+      <h2>Confirm Deletion</h2>
+      <p class="warning-text">
+        This will permanently delete all logs. This action cannot be undone.
+      </p>
+
+      <button id="no" class="secondary-btn">Cancel</button>
+      <button id="yes" class="danger-btn">Yes, Delete</button>
+    </div>
+
+    <footer>
+      <p>MIT Licensed · Free for everyone</p>
+    </footer>
+
+  </div>
 
   <script src="main.js"></script>
 </body>
