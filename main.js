@@ -27,9 +27,17 @@ document.addEventListener("DOMContentLoaded", () => {
         const end = document.getElementById("EndTime").value;
         const date = document.getElementById("Date").value;
         const description = document.getElementById("TasksCompleted").value;
+        const TodayDate = new Date();
+        const FormattedDate = formatDate(TodayDate);
 
         if (!start || !end || !date || !description) {
             alert("All fields must be entered prior to submission");
+            return;
+        }
+
+        if (date < FormattedDate) {
+            //alert("The date cannot be in the past!")
+            alert("ERROR: You cannot pick a date that is before today!");
             return;
         }
 
@@ -102,4 +110,13 @@ document.addEventListener("DOMContentLoaded", () => {
                 .join("\n" + "—".repeat(40) + "\n");
         });
     }
+
+   function formatDate(date) {
+  const month = date.getMonth() + 1;
+  const day = date.getDate();
+  const year = date.getFullYear();
+  return `${year}-${month}-${day}`;
+}
+
+
 });
