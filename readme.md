@@ -1,6 +1,8 @@
 
 # Timebox
 A simple timesheet extension designed for freelancers and made with future support coming to Microsoft Edge and Google Chrome. Timebox is currently available as a demo with potential bugs and issues that are being actively fixed prior to release on the extension stores. 
+
+
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black) ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)
 
 ## Installation
