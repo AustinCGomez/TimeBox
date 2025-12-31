@@ -1,19 +1,18 @@
-// popup.js – FIXED VERSION
 
 let tasks = [];
 
 // Super important: wait for DOM
 document.addEventListener("DOMContentLoaded", () => {
-    const saveBtn = document.getElementById("save-btn");
-    const viewBtn = document.getElementById("view-logs");
-    const viewsHrsBtn = document.getElementById("view-hours");
-    const delBtn = document.getElementById("delete-logs");
-    const output = document.getElementById("output");
-    const noBtn = document.getElementById("no");
-    const yesBtn = document.getElementById("yes");
-    const bckbutton = document.getElementById("back");
-    const settingsBtn = document.getElementById("settings-btn");
-    //const viewlogsbtn = document.getElementById("view-logs");
+    const SAVE_BUTTON = document.getElementById("save-btn");
+    const VIEW_LOGS_BUTTON = document.getElementById("view-logs");
+    const VIEW_HOURS_BUTTON = document.getElementById("view-hours");
+    const DELETE_BUTTON = document.getElementById("delete-logs");
+    const DISPLAY_OUTPUT = document.getElementById("output");
+    const NO_INPUT_BUTTON = document.getElementById("no");
+    const YES_INPUT_BUTTON = document.getElementById("yes");
+    const BACK_BUTTON = document.getElementById("back");
+    const SETTINGS_BUTTON = document.getElementById("settings-btn");
+   
 
     if (!saveBtn || !viewBtn) {
         console.error("One or more elements not found! Check IDs in HTML.");
