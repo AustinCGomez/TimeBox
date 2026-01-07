@@ -1,53 +1,57 @@
 const SAVE_BUTTON = document.getElementById("save-btn");
-
-
+const LOG_HOURS = document.getElementById("view-hours");
+const VIEW_LOGS = document.getElementById("view-logs");
+const VIEW_SETTINGS = document.getElementById("settings-btn");
+const DELETE_BUTTON = document.getElementById("delete-logs");
+const CONFIRM_YES_DELETION = document.getElementById("yes");
+const CONFIRM_NO_DELETION = document.getElementById("no");
+const GO_BACK_BUTTON = document.querySelectorAll(".back-button");
+//const BACK_BUTTON = document.getElementById(".back");
 // Not yet refactored
+
+
+   
 
     // === Save button ===
 SAVE_BUTTON.addEventListener("click", () => {
     const { start, end, date, description } = getFormValues();
     NewEntry(start, end, date, description);
 });
-// Not yet refactored
-// === Delete logs button ===
-    delBtn.addEventListener("click", () => {
-        document.getElementById("logs-dashboard").classList.add("hidden");
-        document.getElementById("warning-dashboard").classList.remove("hidden");
-    });
-// Not yet refactored
-    // === Warning view - No button ===
-    noBtn.addEventListener("click", () => {
-        document.getElementById("warning-dashboard").classList.add("hidden");
-        document.getElementById("logs-dashboard").classList.remove("hidden");
-    });
-// Not yet refactored
-    // === Warning view - Yes button ===
-    yesBtn.addEventListener("click", () => {
-        chrome.storage.local.set({ tasks: [] }, () => {
-            tasks = [];
-            console.log("All tasks deleted!");
-            document.getElementById("warning-dashboard").classList.add("hidden");
-            document.getElementById("mainView").classList.remove("hidden");
-            alert("All logs deleted successfully!");
-        });
-    });
-// Not yet refactored
-    // === View Hours Worked Button ===
-    viewsHrsBtn.addEventListener("click", ()=> {
-        document.getElementById("homeView").classList.add("hidden");
-        document.getElementById("mainView").classList.remove("hidden");
 
+LOG_HOURS.addEventListener("click", () => {
+    ViewSelector("LOG-HOURS");
+    
+});
 
-    });
-// Not yet refactored
-    settingsBtn.addEventListener("click", ()=> {
-        document.getElementById("settings-dashboard").classList.remove("hidden");
-        document.getElementById("homeView").classList.add("hidden");
+VIEW_LOGS.addEventListener("click", () => {
+    ViewSelector("VIEW-LOGS");    
+});
+
+VIEW_SETTINGS.addEventListener("click", () =>{ 
+    ViewSelector("SETTINGS-BUTTON");
+});
+
+DELETE_BUTTON.addEventListener("click", () => {
+    ViewSelector("DELETE-BUTTON");
     });
 
+// We need to change yes-input to something else. 
+CONFIRM_YES_DELETION.addEventListener("click", () => {
+    ViewSelector("YES-INPUT");
+    });
+// We need to change no-input to something else.
+CONFIRM_NO_DELETION.addEventListener("click", () => {
+    ViewSelector("NO-INPUT");
+    });
+
+GO_BACK_BUTTON.forEach(button => {
+    button.addEventListener("click", () => {
+        ViewSelector("BACK-BUTTON");
+    });
+});
 
 
-    function getFormValues() {
+function getFormValues() {
     return {
         start: document.getElementById("StartTime").value,
         end: document.getElementById("EndTime").value,
@@ -61,36 +65,55 @@ SAVE_BUTTON.addEventListener("click", () => {
         tasks = result.tasks || [];
     });
 
-   
-// HOME - this will be for our home button 
-// BACK - this will be for our back button 
-// DELETE - this will be for our DELETE button 
-    function RemoveBackPageSelector() {
+
+    function ViewSelector(page) {
     // We will do .remove from all pages when the back button is pressed.
-        switch("SAVE", "VIEW-LOGS", "VIEW-HOURS", "DELETE-BUTTON", "SHOW-OUTPUT", "NO-INPUT", "YES-INPUT", "BACK-BUTTON", "SETTINGS-BUTTON") {
-        case "SAVE":
-            break;
+        switch(page) {
+        case "LOG-HOURS":
+        document.getElementById("homeView").classList.add("hidden");
+        document.getElementById("mainView").classList.remove("hidden");  
+        break;
         case "VIEW-LOGS":
-             // === View logs button ===
         document.getElementById("homeView").classList.add("hidden");
         document.getElementById("logs-dashboard").classList.remove("hidden");
         displayLogs();
             break;
         case "DELETE-BUTTON":
-            break;
+          document.getElementById("logs-dashboard").classList.add("hidden");
+        document.getElementById("warning-dashboard").classList.remove("hidden");
+        document.getElementById("settings-dashboard").classList.add("hidden");    
+        break;
         case "SHOW-OUTPUT":
             break;
         case "NO-INPUT":
-            break;
+            document.getElementById("warning-dashboard").classList.add("hidden");
+        document.getElementById("logs-dashboard").classList.remove("hidden");
+        break;
         case "YES-INPUT":
+            tasks = [];
+            chrome.storage.local.set({ tasks: [] }, () => { });
+            console.log("All tasks deleted!");
+            document.getElementById("warning-dashboard").classList.add("hidden");
+            document.getElementById("mainView").classList.add("hidden");
+            alert("All logs deleted successfully!")
             break;
         case "BACK-BUTTON":
+            document.getElementById("homeView").classList.remove("hidden");
+            document.getElementById("mainView").classList.add("hidden");
+            document.getElementById("logs-dashboard").classList.add("hidden");
+            document.getElementById("warning-dashboard").classList.add("hidden");
+            document.getElementById("settings-dashboard").classList.add("hidden");
             break;
         case "SETTINGS-BUTTON":
+        document.getElementById("homeView").classList.add("hidden");
+        document.getElementById("settings-dashboard").classList.remove("hidden");
             break;
         };
         
 };
+
+ 
+
     function ResetField(start, end, date, description, TodayDate, FormattedDate) {
         document.getElementById("StartTime").value = "";
         document.getElementById("EndTime").value = "";

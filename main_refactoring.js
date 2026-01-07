@@ -82,6 +82,7 @@ document.addEventListener("DOMContentLoaded", () => {
     delBtn.addEventListener("click", () => {
         document.getElementById("logs-dashboard").classList.add("hidden");
         document.getElementById("warning-dashboard").classList.remove("hidden");
+        document.getElementById("settings-dashboard").classList.add("hidden");
     });
 
     // === Warning view - No button ===
@@ -111,7 +112,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     settingsBtn.addEventListener("click", ()=> {
         document.getElementById("settings-dashboard").classList.remove("hidden");
-        document.getElementById("homeView").classList.add("hidden");
+        //document.getElementById("homeView").classList.add("hidden");
     });
 
     // === Display logs function ===
