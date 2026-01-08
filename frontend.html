@@ -4,21 +4,18 @@
   <meta charset="utf-8">
   <link rel="stylesheet" href="styles.css">
 </head>
-<!--Main Dashboard Section-->
 
 <body>
-  
-
   <div class="app-container">
 
-    <div id ="homeView" class="card">
+    <div id="view-home" class="card">
       <h1> Welcome to Timebox </h1>
-      <button id="view-hours" class="primary-btn"> Log hours</button>
-      <button id="view-logs" class="primary-btn"> View Logs</button>
-      <button id="settings-btn" class="primary-btn"> Settings </button>
+      <button id="btn-open-logger" class="primary-btn"> Log hours</button>
+      <button id="btn-open-logs" class="primary-btn"> View Logs</button>
+      <button id="btn-open-settings" class="primary-btn"> Settings </button>
     </div>
 
-    <div id="mainView" class="card hidden">
+    <div id="view-logger" class="card hidden">
       <button class="back-button link-btn">← Back</button>
       <h1>Log your working hours: </h1>
 
@@ -42,32 +39,30 @@
         <textarea id="TasksCompleted" placeholder="Briefly describe your tasks..."></textarea>
       </div>
 
-      <button id="save-btn" class="primary-btn">Save a new timesheet</button>
-      <button id="view-logs" class="secondary-btn">View Your Timesheet</button>
+      <button id="btn-save-data" class="primary-btn">Save a new timesheet</button>
+      <button id="btn-quick-logs" class="secondary-btn">View Your Timesheet</button>
     </div>
 
-<!--Log Dashboard Section-->
-    <div id="logs-dashboard" class="card hidden">
+    <div id="view-logs-list" class="card hidden">
       <button class="back-button link-btn">← Back</button>
       <h2>All available timesheets </h2>
       <div id="output" class="logs-box">No logs found...</div>
-      <button id="delete-logs" class="danger-btn">Delete All Logs</button>
     </div>
 
-    <div id="warning-dashboard" class="card hidden">
+    <div id="view-confirm-delete" class="card hidden">
       <h2>Confirm Deletion</h2>
       <p class="warning-text">
         This will permanently delete all logs. This action cannot be undone.
       </p>
 
-      <button id="no" class="secondary-btn">Cancel</button>
-      <button id="yes" class="danger-btn">Yes, Delete</button>
+      <button id="btn-cancel-delete" class="secondary-btn">Cancel</button>
+      <button id="btn-execute-delete" class="danger-btn">Yes, Delete</button>
     </div>
 
-    <div id="settings-dashboard" class="card hidden">
+    <div id="view-settings" class="card hidden">
       <button class="back-button link-btn">← Back</button>
       <h1> Application settings</h1>
-      <button id="delete-logs" class="danger-btn">Delete All Logs</button>
+      <button id="btn-delete-all" class="danger-btn">Delete All Logs</button>
     </div>
 
     <footer>
