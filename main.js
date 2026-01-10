@@ -120,6 +120,7 @@ function NewEntry(start, end, date, description, TodayDate, FormattedDate) {
 
     const TASKS = {start, end, date, description, timestamp: Date.now() };
     tasks.push(TASKS);
+    chrome.storage.local.set({ tasks: tasks }, () => {});
     alert("Hours have been saved.", tasks);
     ResetField(start, end, date, description, TodayDate, FormattedDate);
     ViewSelector();
